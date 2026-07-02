@@ -9,7 +9,7 @@
     "dev:load": "set NODE_ENV=load&& tsx watch src/index.ts",
     "test": "vitest run",
     "test:load": "k6 run load-test.js",
-    "build:contracts": "tsx src/generateContracts.ts"
+    "build:contracts": "tsx scripts/generateContracts.ts"
   },
   "dependencies": {
     "express": "^5.2.1",

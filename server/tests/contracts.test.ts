@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import request from "supertest";
-import app from "./app.js";
-import { PaginatedInvoicesContract } from "./contracts.js";
+import app from "../src/app.js";
+import { PaginatedInvoicesContract } from "../src/contracts.js";
 
 describe.concurrent("API Contract Verification Tests", () => {
   it("should validate collection formats", async () => {

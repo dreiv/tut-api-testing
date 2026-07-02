@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { calculateTotal, validateInvoiceInput } from "./invoiceService.js";
+import { calculateTotal, validateInvoiceInput } from "../src/invoiceService.js";
 
 describe("Invoice Service - Unit Tests", () => {
   describe("calculateTotal", () => {

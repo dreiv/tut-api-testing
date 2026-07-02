@@ -1,5 +1,9 @@
 {
   "extends": "../tsconfig.base.json",
-  "compilerOptions": { "rootDir": "./src" },
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*",
+    "scripts/generateContracts.ts",
+    "tests/**/*.test.ts",
+    "tests/mswSetup.ts"
+  ]
 }

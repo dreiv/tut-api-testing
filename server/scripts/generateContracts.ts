@@ -7,7 +7,10 @@ import {
   createAuxiliaryTypeStore,
   createTypeAlias,
 } from "zod-to-ts"; //
-import { InvoiceContract, PaginatedInvoicesContract } from "./contracts.js";
+import {
+  InvoiceContract,
+  PaginatedInvoicesContract,
+} from "../src/contracts.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
