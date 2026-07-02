@@ -8,10 +8,12 @@
     "dev": "tsx watch src/index.ts",
     "dev:load": "set NODE_ENV=load&& tsx watch src/index.ts",
     "test": "vitest run",
-    "test:load": "k6 run load-test.js"
+    "test:load": "k6 run load-test.js",
+    "build:contracts": "tsx src/generateContracts.ts"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
@@ -21,6 +23,7 @@
     "supertest": "^7.2.2",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.9",
+    "zod-to-ts": "^2.1.0"
   }
 }

@@ -7,7 +7,8 @@
   ],
   "packageManager": "npm@11.12.1",
   "scripts": {
-    "dev": "turbo dev"
+    "dev": "turbo dev",
+    "sync-contracts": "npm run build:contracts -w server"
   },
   "devDependencies": {
     "turbo": "^2.10.1"

@@ -1,16 +1,6 @@
+import type { PaginatedResponse } from "./types/api.js";
+
 const API_BASE_URL = "/api";
-
-interface Invoice {
-  id: string;
-  clientName: string;
-  totalAmount: number;
-  status: string;
-  mascot?: string;
-}
-
-interface PaginatedResponse {
-  data: Invoice[];
-}
 
 async function fetchInvoices(): Promise<void> {
   const listContainer = document.getElementById("invoice-list");
