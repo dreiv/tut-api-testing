@@ -1,7 +1,11 @@
-import { describe, it, expect } from "vitest";
-
+import { describe, it, expect, beforeAll, afterEach, afterAll } from "vitest";
 import request from "supertest";
 import app from "./app.js";
+import { server } from "./mswSetup.js";
+
+beforeAll(() => server.listen({ onUnhandledRequest: "bypass" }));
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
 
 describe("Invoice API - Integration Tests", () => {
   describe("GET /api/invoices", () => {
@@ -30,8 +34,12 @@ describe("Invoice API - Integration Tests", () => {
 
       expect(response.status).toBe(201);
       expect(response.body.clientName).toBe("Initech");
-      expect(response.body.totalAmount).toBe(1100); // Verify app logic combined with HTTP layer
+      expect(response.body.totalAmount).toBe(1100);
       expect(response.body).toHaveProperty("id");
+
+      expect(response.body.mascot).toEqual(
+        expect.stringContaining("mock-pokemon-"),
+      );
     });
 
     it("should return 400 Bad Request if the payload is invalid", async () => {

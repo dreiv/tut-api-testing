@@ -6,6 +6,7 @@ export interface Invoice {
   totalAmount: number;
   status: "draft" | "paid" | "void";
   createdAt: string;
+  mascot?: string;
 }
 
 export interface PaginatedResponse<T> {

@@ -10,6 +10,7 @@ export const mockInvoiceDb: Invoice[] = [
     totalAmount: 1200,
     status: "paid",
     createdAt: "2026-01-01T00:00:00.000Z",
+    mascot: "pikachu",
   },
   {
     id: "inv-2",
@@ -19,6 +20,7 @@ export const mockInvoiceDb: Invoice[] = [
     totalAmount: 5750,
     status: "draft",
     createdAt: "2026-01-02T00:00:00.000Z",
+    mascot: "charizard",
   },
   {
     id: "inv-3",

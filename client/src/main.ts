@@ -5,6 +5,7 @@ interface Invoice {
   clientName: string;
   totalAmount: number;
   status: string;
+  mascot?: string;
 }
 
 interface PaginatedResponse {
@@ -31,9 +32,18 @@ async function fetchInvoices(): Promise<void> {
     const listHtml = result.data
       .map(
         (inv) => `
-        <div class="invoice-card" style="border: 1px solid #ccc; padding: 10px; margin: 5px 0; border-radius: 4px;">
-          <h4>${inv.clientName} (${inv.id})</h4>
-          <p>Total: $${inv.totalAmount.toFixed(2)} | Status: <strong>${inv.status}</strong></p>
+        <div class="invoice-card" style="border: 1px solid #ccc; padding: 12px; margin: 8px 0; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h4 style="margin: 0 0 4px 0;">${inv.clientName} <span style="font-size: 0.85em; color: #666; font-weight: normal;">(${inv.id})</span></h4>
+            <p style="margin: 0;">Total: $${inv.totalAmount.toFixed(2)} | Status: <strong style="text-transform: capitalize;">${inv.status}</strong></p>
+          </div>
+          ${
+            inv.mascot
+              ? `<div style="background-color: #f0f4f8; padding: 4px 10px; border-radius: 12px; border: 1px solid #d0e0f0; font-size: 0.9em; color: #2c5282;">
+                  👾 Mascot: <strong style="text-transform: capitalize;">${inv.mascot}</strong>
+                 </div>`
+              : ""
+          }
         </div>
       `,
       )

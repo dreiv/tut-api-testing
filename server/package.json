@@ -6,6 +6,7 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "tsx watch src/index.ts",
+    "dev:load": "set NODE_ENV=load&& tsx watch src/index.ts",
     "test": "vitest run",
     "test:load": "k6 run load-test.js"
   },
@@ -16,6 +17,7 @@
     "@types/express": "^5.0.6",
     "@types/node": "^26.1.0",
     "@types/supertest": "^7.2.0",
+    "msw": "^2.14.6",
     "supertest": "^7.2.2",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3",
