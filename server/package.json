@@ -6,7 +6,8 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "tsx watch src/index.ts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:load": "k6 run load-test.js"
   },
   "dependencies": {
     "express": "^5.2.1"
