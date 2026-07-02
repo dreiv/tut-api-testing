@@ -34,6 +34,7 @@ export const mockInvoiceDb: Invoice[] = [
 export function calculateTotal(amount: number, taxRate: number): number {
   if (amount < 0 || taxRate < 0)
     throw new Error("Amount and tax rate must be positive");
+
   return amount + amount * taxRate;
 }
 
@@ -44,5 +45,6 @@ export function validateInvoiceInput(body: any): string | null {
     return "Amount must be a positive number";
   if (typeof body.taxRate !== "number" || body.taxRate < 0 || body.taxRate > 1)
     return "Tax rate must be between 0 and 1";
+
   return null;
 }
